@@ -1,9 +1,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; initial settings                                                       ;;
+;; initial settings; installing packages and stuff                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;: ## list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+			 ("melpa" . "https://melpa.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "http://marmalade-repo.org/packages/")))
 ;; ## package facility
@@ -13,11 +14,13 @@
 ;(package-refresh-contents)
 ;; ## list the packages needed to be installed
 (setq package-list '(color-theme
-		     undo-tree))
+		     undo-tree
+		     elpy
+		     julia-mode))
 ;; Iterate on packages and install missing ones
 (dolist (pkg package-list)
   (unless (package-installed-p pkg)
-    (package-install pkg)))
+	(package-install pkg)))
 
 ;; ## undo tree with C-x\u
 (require 'undo-tree)
@@ -52,15 +55,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; ## for ipython, otherwise messy staff
-;;(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+;(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
 
 ;; ## elpy needs to be installed
-;;(setq python-shell-interpreter "ipython")
-;;(elpy-enable)
+(setq python-shell-interpreter "ipython")
+(require 'elpy)
+(elpy-enable)
 
 ;; ## pyvenv
-;;(setenv "WORKON_HOME" "/home/kplekhanov/opt/miniconda3/envs/")
-;;(pyvenv-workon "norm")
+(setenv "WORKON_HOME" "/home/kplekhanov/opt/miniconda/envs/")
+(pyvenv-workon "base")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; julia settings                                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'julia-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; latex settings                                                         ;;
