@@ -64,6 +64,7 @@
 (elpy-enable)
 
 ;; ## for ipython, otherwise messy staff
+;; also do pip install pyreadline
 (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
