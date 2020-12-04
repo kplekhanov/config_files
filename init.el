@@ -54,17 +54,18 @@
 ;; python settings                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; ## for ipython, otherwise messy staff
-;(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
-
 ;; ## elpy needs to be installed
 (setq python-shell-interpreter "ipython")
 (require 'elpy)
 (elpy-enable)
 
+;; ## for ipython, otherwise messy staff
+;(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+
 ;; ## pyvenv
+;; also do pip install pyreadline
 (setenv "WORKON_HOME" "/home/kplekhanov/opt/miniconda/envs/")
-(pyvenv-workon "base")
+(pyvenv-workon "main")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; julia settings                                                         ;;
