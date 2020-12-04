@@ -58,14 +58,17 @@
 (setenv "WORKON_HOME" "/home/kplekhanov/opt/miniconda/envs/")
 (pyvenv-workon "main")
 
-;; ## elpy needs to be installed
+;; ## interpreter
 (setq python-shell-interpreter "ipython")
-(require 'elpy)
-(elpy-enable)
 
 ;; ## for ipython, otherwise messy staff
 ;; also do pip install pyreadline
 (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+
+
+;; ## elpy needs to be installed
+(require 'elpy)
+(elpy-enable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; julia settings                                                         ;;
