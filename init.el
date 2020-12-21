@@ -13,7 +13,7 @@
 ;; ## refreshing packages -- time-consuming and should be done on demand
 ;(package-refresh-contents)
 ;; ## list the packages needed to be installed
-(setq package-list '(color-theme
+(setq package-list '(material-theme
 		     undo-tree
 		     elpy
 		     julia-mode))
@@ -34,9 +34,7 @@
 ;; ## tabulation of 4
 (setq-default tab-width 4)
 ;; ## color theme
-;(require 'color-theme)
-;(color-theme-initialize)
-;(color-theme-empty-void)
+(load-theme 'material t) 
 ;; ## Matches parentheses
 (show-paren-mode 1)
 (setq blink-matching-delay 0.1)
@@ -49,6 +47,13 @@
 (global-set-key (kbd "C-x <up>") 'other-window)
 (global-set-key (kbd "M-[ h") 'beginning-of-line)
 (global-set-key (kbd "M-[ f") 'end-of-line)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; cpp settings                                                           ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq c-default-style "linux"
+          c-basic-offset 2)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; python settings                                                        ;;
@@ -65,10 +70,12 @@
 ;; also do pip install pyreadline
 (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
 
-
 ;; ## elpy needs to be installed
 (require 'elpy)
 (elpy-enable)
+
+;; ## pdb
+(setq gud-pdb-command-name "python -m pdb")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; julia settings                                                         ;;
