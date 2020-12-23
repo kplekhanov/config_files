@@ -39,8 +39,28 @@ alias lm='ls -al |more'         # pipe through 'more'
 alias ew='emacsclient -t'
 alias ee='emacsclient -c'
 alias ed='emacs --daemon'
-alias ekill='emacsclient -e '\''(kill-emacs)'\'' '
+alias ek='emacsclient -e '\''(kill-emacs)'\'' '
 
 # other
 alias ..='cd ..'
 alias h='history'
+
+#--------------------
+# conda initialize (usually added authomatically anyway)
+#--------------------
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kirill/opt/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kirill/opt/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/kirill/opt/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kirill/opt/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
