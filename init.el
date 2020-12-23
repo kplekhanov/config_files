@@ -74,6 +74,9 @@
 (require 'elpy)
 (elpy-enable)
 
+;; ## evaluating __main__ when running script
+(global-set-key (kbd "<f5>") (kbd "C-u C-c C-c"))
+
 ;; ## pdb
 (setq gud-pdb-command-name "python -m pdb")
 
