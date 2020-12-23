@@ -17,7 +17,7 @@
 		     undo-tree
 		     elpy
 		     julia-mode))
-;; Iterate on packages and install missing ones
+;; ## Iterate on packages and install missing ones
 (dolist (pkg package-list)
   (unless (package-installed-p pkg)
 	(package-install pkg)))
