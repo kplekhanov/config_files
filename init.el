@@ -29,7 +29,7 @@
 (delete-selection-mode 1)
 ;; ## line numbers globally
 (global-linum-mode t)
-;; ## add some space
+;; ## add some spaces
 (setq linum-format "%d ")
 ;; ## tabulation of 4
 (setq-default tab-width 4)
